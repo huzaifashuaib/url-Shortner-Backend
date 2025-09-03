@@ -10,6 +10,8 @@ dbConnect(
   .catch((e) => console.error("MongoDB Error", e));
 app.use(express.json());
 app.use("/url", urlRouter);
+app.use("/", urlRouter);
+
 app.listen(PORT, () => {
   console.log(`Server Started At Port : ${PORT}`);
 });
